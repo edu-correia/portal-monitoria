@@ -1,0 +1,2 @@
+./backend/node_modules
+backend/node_modules/.bin/is-ci.ps1
