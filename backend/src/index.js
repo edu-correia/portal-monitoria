@@ -6,7 +6,15 @@ app.use(express.json());
 //Get, Post, Put, Delete
 
 app.get('/topics', async (req, res) => {
-    const results = await knex('topics');
+    const { subject } = req.query;
+
+    let results;
+
+    if(subject) {
+        results = await knex('topics').where('course', subject);
+    }else{
+        results = await knex('topics');
+    }
 
     return res.status(200).json(results);
 })
