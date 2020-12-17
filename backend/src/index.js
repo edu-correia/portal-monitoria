@@ -44,13 +44,13 @@ app.post('/report', async (req, res) => {
     const transporter = nodemailer.createTransport({
         host: process.env.TRANSPORT_HOST,
         port: process.env.TRANSPORT_PORT,
-        secure: false, // true for 465, false for other ports
+        secure: false,
         auth: {
-            user: process.env.TRANSPORT_EMAIL, // generated ethereal user
-            pass: process.env.TRANSPORT_PASSWORD, // generated ethereal password
+            user: process.env.TRANSPORT_EMAIL,
+            pass: process.env.TRANSPORT_PASSWORD,
         },
         tls: {
-            rejectUnauthorized: false, 
+            rejectUnauthorized: false,
         }
     });
 
