@@ -5,6 +5,8 @@
 
 body{
     background: #202020;
+    background-image: url("../../assets/bg-curve.png");
+    background-repeat: no-repeat;
 }
 
 .landing-page{

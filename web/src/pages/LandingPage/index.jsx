@@ -7,6 +7,7 @@ import heartIcon from '../../assets/heart.svg';
 
 function LandingPage() {
     return (
+        <>
             <div className="landing-page">
                 <div className="content">
                     <div>
@@ -30,6 +31,7 @@ function LandingPage() {
                     <img src={LandingPic} alt="LandingPicture" className="pic"/>
                 </div>
             </div>
+        </>
     );
 };
 
