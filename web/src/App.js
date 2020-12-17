@@ -1,8 +1,19 @@
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import LandingPage from './pages/LandingPage'
+import Topic from './pages/Topic'
+import SpecificTopic from './pages/SpecificTopic'
+import Courses from './pages/Courses'
+
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/topic" component={Topic} />
+        <Route path="/specific-topic" component={SpecificTopic} />
+        <Route path="/courses" component={Courses} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
