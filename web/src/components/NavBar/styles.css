@@ -1,0 +1,49 @@
+.hdr{
+    width: 100%;
+    height: 80px;
+    background: #101010;
+    border-bottom: 2px solid #EDD712;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.return{
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.return img{
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.return span{
+    font-size: 20px;
+    font-family: 'Questrial', sans-serif;
+    color:  #EDD712;
+}
+
+.logo{
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo span{
+    font-family: 'Questrial', sans-serif;
+    font-size: 24px;
+}
+
+.logo span:nth-child(1){
+    color: #fff;
+    margin-right: 70px;
+}
+
+.logo span:nth-child(2){
+    color: #EDD712;
+}

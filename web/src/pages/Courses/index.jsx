@@ -1,17 +1,9 @@
-import ArrowLeft from "../../assets/icons/arrow-left.svg";
+import NavBar from '../../components/NavBar'
+
 function Courses() {
     return (
         <>
-            <header>
-                <div className="return">
-                    <img src={ArrowLeft} alt="Voltar"/>
-                    <span>Voltar</span>
-                </div>
-                <div className="logo">
-                    <span>Portal</span>
-                    <span>Monitoria</span>
-                </div>
-            </header>
+            <NavBar />
         </>
     );
 }
