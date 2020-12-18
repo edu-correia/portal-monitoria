@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './styles.css';
 
 import LandingPic from '../../assets/landing-pic.png';
-import heartIcon from '../../assets/heart.svg';
+import heartIcon from '../../assets/icons/heart.svg';
 
 function LandingPage() {
     return (
@@ -18,7 +18,7 @@ function LandingPage() {
                     <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sed eveniet aut enim ea facere alias labore voluptatum quia dignissimos!</p>
 
                     <div>
-                        <Link to="/topics" className="enter">
+                        <Link to="/courses" className="enter">
                             Acessar aulas
                         </Link>
                         <Link to="/" className="help">
