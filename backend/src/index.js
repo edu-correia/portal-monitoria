@@ -2,8 +2,10 @@ require('dotenv').config()
 const express = require('express');
 const knex = require('./database');
 const nodemailer = require('nodemailer');
+const cors = require('cors');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/topics', async (req, res) => {
