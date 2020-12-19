@@ -39,3 +39,8 @@
     font-size: 12px;
     list-style: none;
 }
+
+.monitor-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

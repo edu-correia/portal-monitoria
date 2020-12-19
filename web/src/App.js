@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/topic" component={Topic} />
+        <Route path="/topic/:course" component={Topic} />
         <Route path="/specific-topic" component={SpecificTopic} />
         <Route path="/courses" component={Courses} />
       </Switch>
