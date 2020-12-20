@@ -1,0 +1,64 @@
+.lg-header{
+    width: 100%;
+    height: 200px;
+    background: #101010;
+    position: relative;
+    border-bottom: 2px solid #EDD712;
+    display: flex;
+    justify-content: center;
+}
+
+.topic-title{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.topic-title p{
+    font-family: 'Questrial', sans-serif;
+    font-size: 28px;
+    color: #fff;
+}
+
+.topic-title span{
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    color: #888;
+}
+
+.topic-return{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+}
+
+.topic-return img{
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.topic-return span{
+    font-size: 20px;
+    font-family: 'Questrial', sans-serif;
+    color:  #EDD712;
+}
+
+.topic-content{
+    width: 60%;
+    height: max-content;
+    background: #fff;
+    border-radius: 16px;
+    margin: -80px 20% 0 20%;
+    position: absolute;
+    padding: 15px;
+    box-sizing: border-box;
+}
