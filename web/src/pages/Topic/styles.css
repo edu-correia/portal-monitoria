@@ -65,3 +65,30 @@
     font-family: 'Quicksand', sans-serif;
     text-decoration: none;
 }
+
+.report-popup{
+    color: #e0e0e0;
+    position: absolute;
+    width: 36%;
+    height: 70vh;
+    background-color: #101010;
+    top: 15vh;
+    left: 32%;
+    right: 32%;
+    border-radius: 16px;
+    box-shadow: 4px 4px 5px rgb(26, 23, 23);
+}
+
+.report-popup .report-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.report-popup .report-title h2{
+    font-family: 'Questrial', sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+    margin-left: 15px;
+}

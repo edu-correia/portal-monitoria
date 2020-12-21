@@ -1,18 +1,22 @@
+import {useState} from 'react'
 import {Link} from 'react-router-dom';
-import flagIcon from '../../assets/icons/flag.svg';
 
-function TopicDiv({title, subject, author}){
+import './styles.css';
+
+import flagPinkIcon from '../../assets/icons/flag-pink.svg';
+
+function TopicDiv({id, title, subject, author, children}){
     return (
-        <div className="topic-div">
-            <p>{title} - {subject}</p>
-            <span>Feito por {author}</span>
-            <div className="btns">
-                <button>
-                    <img src={flagIcon} alt="Reportar"/>
-                </button>
-                <Link className="specific" to="/">Visualizar</Link>
+        <>
+            <div className="topic-div">
+                <p>{title} - {subject}</p>
+                <span>Feito por {author}</span>
+                <div className="btns">
+                    {children}
+                    <Link className="specific" to={`/specific-topic/${id}`}>Visualizar</Link>
+                </div>
             </div>
-        </div>
+        </>
     );
 }
 
