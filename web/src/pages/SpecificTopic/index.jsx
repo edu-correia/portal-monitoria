@@ -1,21 +1,46 @@
-import {useHistory} from 'react-router';
+import {useState, useEffect} from 'react';
+import {useHistory, useParams} from 'react-router';
+import marked from 'marked';
+
+import api from '../../services/api';
+import fullCourse from '../../utils/fullCourse';
 
 import './styles.css';
 
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
 
 function SpecificTopic() {
+    const [topic, setTopic] = useState({
+        id: 0,
+        title: "",
+        subject: "",
+        course: null,
+        author: "",
+        content: ""
+    });
+    const [courseName, setCourseName] = useState([]);
+    const { id } = useParams();
     const history = useHistory();
+
+    useEffect(() => {
+        async function getTopic() {
+            await api.get(`/specific/${id}`).then(res => {
+                setTopic(res.data);
+            });
+        }
+        getTopic();
+        setCourseName(fullCourse(topic.course));
+    }, [topic]);
 
     return (
         <>
             <header className="lg-header">
                 <div className="topic-title">
                     <p>
-                        Pilhas e Filas
+                        {topic.title}
                     </p>
                     <span>
-                        Informática - 2º ano
+                        {courseName}
                     </span>
                 </div>
                 <button onClick={() => history.goBack()} className="topic-return">
@@ -24,18 +49,8 @@ function SpecificTopic() {
                 </button>
             </header>
 
-            <main className="topic-content">
-                <h2>Título</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus rerum possimus? Minima, architecto! Officia praesentium molestiae rem quas quod provident odio minus, ex voluptate accusamus, nam eligendi, totam sed sunt doloremque maxime ut unde. Sapiente porro eum natus culpa. Eos totam aliquid omnis deserunt maiores dolores ipsum consectetur tempore laboriosam tenetur consequatur, officiis neque vel nesciunt ut ipsa aspernatur amet sapiente perferendis recusandae repellendus aperiam? Enim iure quaerat sit? Velit mollitia ut ad provident repudiandae in atque adipisci! Tenetur minus totam quas vitae, aliquam hic voluptatem? Natus, excepturi illum, magnam ipsam veniam nobis ducimus mollitia architecto itaque veritatis provident!<br /><br />
-
-                <h2>Título</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus rerum possimus? Minima, architecto! Officia praesentium molestiae rem quas quod provident odio minus, ex voluptate accusamus, nam eligendi, totam sed sunt doloremque maxime ut unde. Sapiente porro eum natus culpa. Eos totam aliquid omnis deserunt maiores dolores ipsum consectetur tempore laboriosam tenetur consequatur, officiis neque vel nesciunt ut ipsa aspernatur amet sapiente perferendis recusandae repellendus aperiam? Enim iure quaerat sit? Velit mollitia ut ad provident repudiandae in atque adipisci! Tenetur minus totam quas vitae, aliquam hic voluptatem? Natus, excepturi illum, magnam ipsam veniam nobis ducimus mollitia architecto itaque veritatis provident!<br /><br />
-
-                <h2>Título</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus rerum possimus? Minima, architecto! Officia praesentium molestiae rem quas quod provident odio minus, ex voluptate accusamus, nam eligendi, totam sed sunt doloremque maxime ut unde. Sapiente porro eum natus culpa. Eos totam aliquid omnis deserunt maiores dolores ipsum consectetur tempore laboriosam tenetur consequatur, officiis neque vel nesciunt ut ipsa aspernatur amet sapiente perferendis recusandae repellendus aperiam? Enim iure quaerat sit? Velit mollitia ut ad provident repudiandae in atque adipisci! Tenetur minus totam quas vitae, aliquam hic voluptatem? Natus, excepturi illum, magnam ipsam veniam nobis ducimus mollitia architecto itaque veritatis provident!<br /><br />
-
-                <h2>Título</h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus temporibus rerum possimus? Minima, architecto! Officia praesentium molestiae rem quas quod provident odio minus, ex voluptate accusamus, nam eligendi, totam sed sunt doloremque maxime ut unde. Sapiente porro eum natus culpa. Eos totam aliquid omnis deserunt maiores dolores ipsum consectetur tempore laboriosam tenetur consequatur, officiis neque vel nesciunt ut ipsa aspernatur amet sapiente perferendis recusandae repellendus aperiam? Enim iure quaerat sit? Velit mollitia ut ad provident repudiandae in atque adipisci! Tenetur minus totam quas vitae, aliquam hic voluptatem? Natus, excepturi illum, magnam ipsam veniam nobis ducimus mollitia architecto itaque veritatis provident!<br /><br />
+            <main className="topic-content" dangerouslySetInnerHTML={{ __html: marked(topic.content, {breaks: true})}}>
+                
             </main>
         </>
     );

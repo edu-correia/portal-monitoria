@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 import { useParams } from "react-router";
 import api from '../../services/api';
+import fullCourse from '../../utils/fullCourse';
 
 import './styles.css';
 
@@ -18,40 +19,12 @@ function Topic() {
             setTopics(res.data);
         })
 
-        switch(course.substr(1)){
-            case 'EDF':
-                setCourseName('Edificações');
-            break;
-            case 'ENF':
-                setCourseName('Enfermagem');
-            break;
-            case 'GEO':
-                setCourseName('Geodésia');
-            break;
-            case 'INF':
-                setCourseName('Informática');
-            break;
-            case 'MEC':
-                setCourseName('Mecânica');
-            break;
-            case 'QLD':
-                setCourseName('Qualidade');
-            break;
-            case 'BEQ':
-                setCourseName('Biologia e Química');
-            break;
-            case 'FEM':
-                setCourseName('Física e Matemática');
-            break;
-            case 'HUM':
-                setCourseName('Humanas');
-            break;
-        }
+        setCourseName(fullCourse(course));
     },  [])
     return (
         <>
             <NavBar />
-            <p className="title">{courseName} - {course[0]}º ano</p>
+            <p className="title">{courseName}</p>
             <div className="topics-container">
                 {topics.map((topic) => {
                     return (

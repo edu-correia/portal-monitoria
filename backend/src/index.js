@@ -40,6 +40,19 @@ app.post('/topics', async (req, res) => {
     return res.status(201).json({message: 'Success!'});
 })
 
+app.get('/specific/:id', async (req, res) => {
+    const { id } = req.params;
+    
+    let result;
+    try {
+        result = await knex('topics').where('id', id);
+    } catch (error) {
+        return res.status(404).json({message: error});
+    }
+
+    return res.status(200).json(result[0]);
+})
+
 app.post('/report', async (req, res) => {
     const { name, title, text, topic_id, type } = req.body;
 
