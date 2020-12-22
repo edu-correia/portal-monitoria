@@ -5,20 +5,11 @@ import fullCourse from '../../utils/fullCourse';
 
 import './styles.css';
 
-import flagPinkIcon from '../../assets/icons/flag-pink.svg';
 import flagWhiteIcon from '../../assets/icons/flag-white.svg';
 
 import NavBar from '../../components/NavBar';
 import TopicDiv from '../../components/TopicDiv';
-
-
-function ReportButton({id, func}){
-    return (
-        <button onClick={() => func(id)}>
-            <img src={flagPinkIcon} alt="Reportar"/>
-        </button>
-    )
-}
+import ReportButton from '../../components/ReportButton';
 
 function Topic() {
     const [name, setName] = useState("");
@@ -48,7 +39,7 @@ function Topic() {
 
         api.post('/report', data).then((response) => {
             if(response.status === 201) {
-                alert('Reportado');
+                alert('Denúncia feita com sucesso!');
                 setWhichPopup(null);
             }
           }, (error) => {
@@ -87,7 +78,7 @@ function Topic() {
                 <div className="report-popup">
                     <div className="report-title">
                         <img src={flagWhiteIcon} alt="Reportar"/>
-                        <h2>Reportar {whichPopup}</h2>
+                        <h2>Reportar</h2>
                     </div>
 
                     <div className="input-box">
@@ -101,10 +92,17 @@ function Topic() {
                     </div>
 
                     <div className="radio-box">
-                        <label htmlFor="report">Denúncia:</label>
-                        <input type="radio" id="report" name="type" onClick={() => setType("Denúncia")}/>
-                        <label htmlFor="error">Erro:</label>
-                        <input type="radio" id="error" name="type" onClick={() => setType("Erro")}/>
+                        <p>Tipo:</p>
+                        <div className="radios">
+                            <div>
+                                <label className="radio-label" htmlFor="report">Denúncia:</label>
+                                <input type="radio" id="report" name="type" onClick={() => setType("Denúncia")}/>
+                            </div>
+                            <div>
+                                <label className="radio-label" htmlFor="error">Erro:</label>
+                                <input type="radio" id="error" name="type" onClick={() => setType("Erro")}/>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="input-box">
@@ -112,13 +110,15 @@ function Topic() {
                         <textarea id="textarea" onChange={(e) => setText(e.target.value)}/>
                     </div>
 
-                    <button onClick={() => setWhichPopup(null)}>
-                        Cancelar
-                    </button>
+                    <div className="report-btns">
+                        <button onClick={() => setWhichPopup(null)}>
+                            Cancelar
+                        </button>
 
-                    <button onClick={() => sendReport(whichPopup)}>
-                        Confirmar
-                    </button>
+                        <button onClick={() => sendReport(whichPopup)}>
+                            Confirmar
+                        </button>
+                    </div>
                 </div>
             ) : ""}
         </>
