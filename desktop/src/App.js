@@ -1,11 +1,15 @@
 import React from 'react';
-import './App.css';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
-    <div className="App">
-      <h1>React Electron</h1>
-    </div>
+      <Router>
+        <Switch>
+          <Route path="/" component={LandingPage} />
+        </Switch>
+    </Router>
   );
 }
 
