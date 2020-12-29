@@ -19,7 +19,7 @@
     color: white;
 }
 
-.input-group input{
+.input-group input, .input-group select{
     height: 32px;
     font-family: 'Quicksand', sans-serif;
     background: #101010;
@@ -43,5 +43,4 @@
     border-radius: 4px;
     outline: none;
     resize: vertical;
-    margin-bottom: 50px;
 }
