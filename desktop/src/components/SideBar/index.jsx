@@ -13,7 +13,7 @@ function SideBar({active}){
             <Link to="/" className={active === 'history' ? "active icon" : "icon"}>
                 <img src={historyIcon} alt="Matérias" />
             </Link>
-            <Link to="/" className={active === 'plus' ? "active icon" : "icon"}>
+            <Link to="/add-topic" className={active === 'plus' ? "active icon" : "icon"}>
                 <img src={plusIcon} alt="Adicionar"/>
             </Link>
             <Link to="/" className={active === 'question' ? "active icon" : "icon"}>
