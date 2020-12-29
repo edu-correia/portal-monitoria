@@ -5,7 +5,8 @@ let mainWindow;
 function createWindow() {
     mainWindow = new BrowserWindow({ 
         minWidth: 760, 
-        minHeight: 600
+        minHeight: 600,
+        icon: path.join(__dirname, 'icon.png')
     });
 
     mainWindow.maximize();
