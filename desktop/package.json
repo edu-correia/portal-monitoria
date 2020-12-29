@@ -16,6 +16,7 @@
     "axios": "^0.21.1",
     "cross-env": "^6.0.3",
     "electron-is-dev": "^1.1.0",
+    "marked": "^1.2.7",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-router-dom": "^5.1.2",

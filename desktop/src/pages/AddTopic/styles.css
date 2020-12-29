@@ -1,8 +1,8 @@
 .form{
     width: 80%;
     height: 70vh;
-    /* background: blue; */
     margin: 50px auto 50px auto;
+    position: relative;
 }
 
 .input-group{
@@ -43,4 +43,53 @@
     border-radius: 4px;
     outline: none;
     resize: vertical;
+}
+
+.add-btn{
+    width: 100px;
+    height: 32px;
+    position: absolute;
+    right: 0;
+    border: 1px solid #E035CF;
+    border-radius: 2px;
+    background: transparent;
+    font-size: 16px;
+    font-family: 'Questrial', sans-serif;
+    color: #E035CF;
+    margin-bottom: 50px;
+    outline: none;
+}
+
+.add-btn:hover{
+    background: #E035CF;
+    color: #202020;
+}
+
+.pv-btn{
+    width: 150px;
+    height: 32px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: 1px solid #bd1919;
+    color: #bd1919;
+    outline: none;
+}
+
+.pv-active{
+    border: 1px solid #3abd19;
+    color: #3abd19;
+}
+
+.pv-box{
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    min-height: 400px;
+    height: max-content;
 }
