@@ -9,3 +9,11 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
 }
+
+/* Responsividade */
+@media only screen and (max-width: 600px){
+    .courses-container{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

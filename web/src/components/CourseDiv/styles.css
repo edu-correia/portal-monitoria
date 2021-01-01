@@ -44,3 +44,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+/* Responsividade */
+@media only screen and (max-width: 600px){
+    .course-div{
+        margin-bottom: 20px;
+    }
+}
