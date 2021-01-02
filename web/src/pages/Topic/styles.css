@@ -16,7 +16,7 @@
 
 .report-popup{
     color: #e0e0e0;
-    position: absolute;
+    position: fixed;
     width: 36%;
     height: 70vh;
     background-color: #101010;
@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid #EDD712;
 }
 
 .report-popup .report-title{
@@ -114,7 +115,6 @@
 .report-btns button{
     width: 100px;
     height: 24px;
-    margin-left: 5px;
     background: none;
     font-family: 'Questrial', sans-serif;
     font-size: 14px;
@@ -130,11 +130,25 @@
 .report-btns button:nth-child(2){
     border: 1px solid green;
     color: green;
+    margin-left: 5px;
 }
 
 /* Responsividade */
 @media only screen and (max-width: 600px) {
     .topics-container{
         grid-template-columns: 1fr;
+    }
+
+    .report-popup{
+        width: 90%;
+        height: 80vh;
+        background-color: #101010;
+        top: 10vh;
+        left: 5%;
+        right: 5%;
+    }
+
+    .report-btns{
+        justify-content: space-between;
     }
 }
