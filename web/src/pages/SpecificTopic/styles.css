@@ -62,3 +62,36 @@
     padding: 15px;
     box-sizing: border-box;
 }
+
+/* Responsividade */
+@media only screen and (max-width: 700px) {
+    .lg-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .topic-title{
+        align-items: flex-end;
+        margin-top: 0;
+        margin-right: 5%;
+        margin-top: -50px;
+    }
+
+    .topic-content{
+        width: 90%;
+        margin: -80px 5% 0 5%;
+    }
+
+    .topic-return{
+        margin-left: 5%;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        margin-top: -50px;
+    }
+
+    .topic-return span{
+        display: none;
+    }
+}

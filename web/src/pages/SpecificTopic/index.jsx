@@ -35,6 +35,10 @@ function SpecificTopic() {
     return (
         <>
             <header className="lg-header">
+                <button onClick={() => history.goBack()} className="topic-return">
+                    <img src={ArrowLeft} alt="Voltar"/>
+                    <span>Voltar</span>
+                </button>
                 <div className="topic-title">
                     <p>
                         {topic.title}
@@ -43,10 +47,6 @@ function SpecificTopic() {
                         {courseName}
                     </span>
                 </div>
-                <button onClick={() => history.goBack()} className="topic-return">
-                    <img src={ArrowLeft} alt="Voltar"/>
-                    <span>Voltar</span>
-                </button>
             </header>
 
             <main className="topic-content" dangerouslySetInnerHTML={{ __html: marked(topic.content, {breaks: true})}}>
