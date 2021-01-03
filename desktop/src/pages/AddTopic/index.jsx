@@ -56,10 +56,33 @@ function AddTopic(){
                                 <label htmlFor="course">Curso:</label>
                                 <select value={course} onChange={(e) => setCourse(e.target.value)}id="course">
                                     <option value="" disabled hidden>Selecione uma opção</option>
+                                    <option value="1EDF">1º Edificações</option>
+                                    <option value="2EDF">2º Edificações</option>
+                                    <option value="3EDF">3º Edificações</option>
+                                    <option value="1ENF">1º Enfermagem</option>
+                                    <option value="2ENF">2º Enfermagem</option>
+                                    <option value="3ENF">3º Enfermagem</option>
+                                    <option value="1GEO">1º Geodésia</option>
+                                    <option value="2GEO">2º Geodésia</option>
+                                    <option value="3GEO">3º Geodésia</option>
+                                    <option value="1INF">1º Informática</option>
+                                    <option value="2INF">2º Informática</option>
+                                    <option value="3INF">3º Informática</option>
                                     <option value="1MEC">1º Mecânica</option>
                                     <option value="2MEC">2º Mecânica</option>
                                     <option value="3MEC">3º Mecânica</option>
-                                    <option value="1INF">1º Informática</option>
+                                    <option value="1QLD">1º Qualidade</option>
+                                    <option value="2QLD">2º Qualidade</option>
+                                    <option value="3QLD">3º Qualidade</option>
+                                    <option value="1BEQ">1º Biologia e Química</option>
+                                    <option value="2BEQ">2º Biologia e Química</option>
+                                    <option value="3BEQ">3º Biologia e Química</option>
+                                    <option value="1FEM">1º Física e Matemática</option>
+                                    <option value="2FEM">2º Física e Matemática</option>
+                                    <option value="3FEM">3º Física e Matemática</option>
+                                    <option value="1HUM">1º Humanas</option>
+                                    <option value="2HUM">2º Humanas</option>
+                                    <option value="3HUM">3º Humanas</option>
                                 </select>
                             </div>
                             <div className="input-group">
