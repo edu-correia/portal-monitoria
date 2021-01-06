@@ -93,3 +93,41 @@
     min-height: 400px;
     height: max-content;
 }
+
+/*  */
+.pv-box img{
+    max-width: 100%;
+}
+
+.pv-box li{
+    margin-left: 25px;
+}
+
+.pv-box table{
+    border: 1px solid #000;
+    border-spacing: 0px;
+}
+
+.pv-box td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.pv-box tr{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.pv-box th{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.pv-box h1, .pv-box h2, .pv-box h3, .pv-box h4, .pv-box h5, .pv-box h6{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.pv-box{
+    font-family: 'Quicksand', sans-serif;
+}
