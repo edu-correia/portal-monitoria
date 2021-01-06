@@ -16,7 +16,7 @@ function SideBar({active}){
             <Link to="/add-topic" className={active === 'plus' ? "active icon" : "icon"}>
                 <img src={plusIcon} alt="Adicionar"/>
             </Link>
-            <Link to="/" className={active === 'question' ? "active icon" : "icon"}>
+            <Link to="/markdown" className={active === 'question' ? "active icon" : "icon"}>
                 <img src={questionIcon} alt="Dúvidas"/>
             </Link>
         </div>
