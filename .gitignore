@@ -2,3 +2,5 @@ backend/node_modules
 web/node_modules
 backend/.env
 backend/src/database/database.sqlite
+node_modules
+.env
