@@ -6,6 +6,7 @@ import fullCourse from '../../utils/fullCourse';
 import './styles.css';
 
 import flagWhiteIcon from '../../assets/icons/flag-white.svg';
+import emptyIcon from '../../assets/icons/empty.svg';
 
 import NavBar from '../../components/NavBar';
 import TopicDiv from '../../components/TopicDiv';
@@ -59,20 +60,29 @@ function Topic() {
         <>
             <NavBar />
             <p className="title">{courseName}</p>
-            <div className="topics-container">
-                {topics.map((topic) => {
-                    return (
-                        <TopicDiv
-                            key={topic.id}
-                            title={topic.title}
-                            subject={topic.subject}
-                            author={topic.author}
-                            id={topic.id}
-                            children={<ReportButton func={setWhichPopup} id={topic.id}/>}
-                        />
+            {topics.length === 0 ? (
+                        <div className="topics-empty">
+                            <img src={emptyIcon} alt="Vazio"/>
+                            <span>Ops! Parece que essa matéria ainda não possui conteúdo.</span>
+                        </div>
+                    ) : (
+                        <div className="topics-container">
+                            {topics.map((topic) => {
+                                return (
+                                    <TopicDiv
+                                        key={topic.id}
+                                        title={topic.title}
+                                        subject={topic.subject}
+                                        author={topic.author}
+                                        id={topic.id}
+                                        children={<ReportButton func={setWhichPopup} id={topic.id}/>}
+                                    />
+                                )
+                            })}
+                        </div>
                     )
-                })}
-            </div>
+                }
+            
 
             {whichPopup !== null ? (
                 <div className="report-popup">
