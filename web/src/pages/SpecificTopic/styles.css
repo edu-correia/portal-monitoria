@@ -63,6 +63,50 @@
     box-sizing: border-box;
 }
 
+/*  */
+.topic-content img{
+    max-width: 100%;
+}
+
+.topic-content li{
+    margin-left: 25px;
+}
+
+.topic-content table{
+    border: 1px solid #000;
+    border-spacing: 0px;
+}
+
+.topic-content td{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.topic-content tr{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.topic-content th{
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.topic-content h1, .topic-content h2, .topic-content h3, .topic-content h4, .topic-content h5, .topic-content h6{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+
+.topic-content blockquote{
+    border-left: 2px solid #7e7e7e;
+    color: #7e7e7e;
+    padding: 5px;
+}
+
+.topic-content{
+    font-family: 'Quicksand', sans-serif;
+}
+
 /* Responsividade */
 @media only screen and (max-width: 700px) {
     .lg-header{

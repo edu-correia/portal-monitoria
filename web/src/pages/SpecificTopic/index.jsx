@@ -49,8 +49,7 @@ function SpecificTopic() {
                 </div>
             </header>
 
-            <main className="topic-content" dangerouslySetInnerHTML={{ __html: marked(topic.content, {breaks: true})}}>
-                
+            <main className="topic-content" dangerouslySetInnerHTML={{ __html: marked(topic.content, {breaks: true})}}> 
             </main>
         </>
     );
