@@ -74,16 +74,31 @@ h1.monitoria{
     height: auto;
 }
 
-/* Responsividade */
+.landing-mobile{
+    width: 100%;
+    height: auto;
+    display: none;
+}
 
+/* Responsividade */
 @media only screen and (max-width: 600px) {
+    .content{
+        height: 90vh;
+    }
+
     .image{
         display: none;
     }
 
     .landing-page{
+        margin: 5vh 10vw 5vh 10vw; 
+        height: 90vh;
         display: inherit;
         grid-template-columns: none;
         gap: 0;
+    }
+
+    .landing-mobile{
+        display: block;
     }
 }

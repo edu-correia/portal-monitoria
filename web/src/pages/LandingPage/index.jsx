@@ -17,14 +17,16 @@ function LandingPage() {
 
                     <p className="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sed eveniet aut enim ea facere alias labore voluptatum quia dignissimos!</p>
 
+                    <img src={LandingPic} alt="LandingPicture" className="landing-mobile"/>
+
                     <div>
                         <Link to="/courses" className="enter">
                             Acessar aulas
                         </Link>
-                        <Link to="/" className="help">
+                        {/* <Link to="/" className="help">
                             <img src={heartIcon} alt="Apoiar"/>
                             <span>Apoiar</span>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
                 <div className="image">

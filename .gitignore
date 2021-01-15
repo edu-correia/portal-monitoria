@@ -4,3 +4,5 @@ backend/.env
 backend/src/database/database.sqlite
 node_modules
 .env
+web/.eslintcache
+web/.eslintcache
