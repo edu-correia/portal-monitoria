@@ -12,19 +12,7 @@ function Courses() {
                 {/* Edificações */}
                 <CourseDiv 
                     display_title="Edificações"
-                    course_id="1EDF"
-                    monitors={['Luiza Camargo', 'Vitória Dias', 'Victória Rosa']}
-                />
-
-                <CourseDiv 
-                    display_title="Edificações"
-                    course_id="2EDF"
-                    monitors={['Luiza Camargo', 'Vitória Dias', 'Victória Rosa']}
-                />
-
-                <CourseDiv 
-                    display_title="Edificações"
-                    course_id="3EDF"
+                    course_id="EDF"
                     monitors={['Luiza Camargo', 'Vitória Dias', 'Victória Rosa']}
                 />
 
@@ -32,39 +20,15 @@ function Courses() {
 
                 <CourseDiv 
                     display_title="Enfermagem"
-                    course_id="1ENF"
+                    course_id="ENF"
                     monitors={['Letícia Trindade', 'Ana Silva', 'Nathália Cunha', 'Marina Fonseca']}
                 />
-
-                <CourseDiv 
-                    display_title="Enfermagem"
-                    course_id="2ENF"
-                    monitors={['Letícia Trindade', 'Ana Silva', 'Nathália Cunha', 'Marina Fonseca']}
-                /> 
-
-                <CourseDiv 
-                    display_title="Enfermagem"
-                    course_id="3ENF"
-                    monitors={['Letícia Trindade', 'Ana Silva', 'Nathália Cunha', 'Marina Fonseca']}
-                />   
 
                 {/* Geodésia */}
 
                 <CourseDiv 
                     display_title="Geodésia"
-                    course_id="1GEO"
-                    monitors={['Nicolas Chiarotti', 'Camilly Leite', 'Isabella Pinto']}
-                />
-
-                <CourseDiv 
-                    display_title="Geodésia"
-                    course_id="2GEO"
-                    monitors={['Nicolas Chiarotti', 'Camilly Leite', 'Isabella Pinto']}
-                />
-
-                <CourseDiv 
-                    display_title="Geodésia"
-                    course_id="3GEO"
+                    course_id="GEO"
                     monitors={['Nicolas Chiarotti', 'Camilly Leite', 'Isabella Pinto']}
                 />
 
@@ -72,19 +36,7 @@ function Courses() {
 
                 <CourseDiv 
                     display_title="Informática"
-                    course_id="1INF"
-                    monitors={['Bruno Corrêa', 'Eduardo Correia']}
-                />
-
-                <CourseDiv
-                    display_title="Informática"
-                    course_id="2INF"
-                    monitors={['Bruno Corrêa', 'Eduardo Correia']}
-                />
-
-                <CourseDiv
-                    display_title="Informática"
-                    course_id="3INF"
+                    course_id="INF"
                     monitors={['Bruno Corrêa', 'Eduardo Correia']}
                 />
 
@@ -92,19 +44,7 @@ function Courses() {
 
                 <CourseDiv
                     display_title="Mecânica"
-                    course_id="1MEC"
-                    monitors={['Felipi Santos', 'Guilherme Rodrigues', 'Lorena Milani', 'Vinícius Silva']}
-                />
-
-                <CourseDiv
-                    display_title="Mecânica"
-                    course_id="2MEC"
-                    monitors={['Felipi Santos', 'Guilherme Rodrigues', 'Lorena Milani', 'Vinícius Silva']}
-                />
-
-                <CourseDiv
-                    display_title="Mecânica"
-                    course_id="3MEC"
+                    course_id="MEC"
                     monitors={['Felipi Santos', 'Guilherme Rodrigues', 'Lorena Milani', 'Vinícius Silva']}
                 />
 
@@ -112,19 +52,7 @@ function Courses() {
 
                 <CourseDiv
                     display_title="Qualidade"
-                    course_id="1QLD"
-                    monitors={['Giovanna Jürgensen', 'Mayara Fonseca']}
-                />
-
-                <CourseDiv
-                    display_title="Qualidade"
-                    course_id="2QLD"
-                    monitors={['Giovanna Jürgensen', 'Mayara Fonseca']}
-                />
-
-                <CourseDiv
-                    display_title="Qualidade"
-                    course_id="3QLD"
+                    course_id="QLD"
                     monitors={['Giovanna Jürgensen', 'Mayara Fonseca']}
                 />
 
@@ -132,19 +60,7 @@ function Courses() {
 
                 <CourseDiv
                     display_title="Biologia e Química"
-                    course_id="1BEQ"
-                    monitors={['Gabriella Rezende', 'Rebecca Almeida', 'Wendy Anjos']}
-                />
-
-                <CourseDiv
-                    display_title="Biologia e Química"
-                    course_id="2BEQ"
-                    monitors={['Gabriella Rezende', 'Rebecca Almeida', 'Wendy Anjos']}
-                />
-
-                <CourseDiv
-                    display_title="Biologia e Química"
-                    course_id="3BEQ"
+                    course_id="BEQ"
                     monitors={['Gabriella Rezende', 'Rebecca Almeida', 'Wendy Anjos']}
                 />
 
@@ -152,19 +68,7 @@ function Courses() {
 
                 <CourseDiv
                     display_title="Física e Matemática"
-                    course_id="1FEM"
-                    monitors={['Vitória Nicoleti', 'Raphael Penachioni', 'Gustavo Granjeia', 'Ana Santos', 'Marília Jampani', 'Iuri Barbosa']}
-                />
-
-                <CourseDiv
-                    display_title="Física e Matemática"
-                    course_id="2FEM"
-                    monitors={['Vitória Nicoleti', 'Raphael Penachioni', 'Gustavo Granjeia', 'Ana Santos', 'Marília Jampani', 'Iuri Barbosa']}
-                />
-
-                <CourseDiv
-                    display_title="Física e Matemática"
-                    course_id="3FEM"
+                    course_id="FEM"
                     monitors={['Vitória Nicoleti', 'Raphael Penachioni', 'Gustavo Granjeia', 'Ana Santos', 'Marília Jampani', 'Iuri Barbosa']}
                 />
 
@@ -172,19 +76,7 @@ function Courses() {
 
                  <CourseDiv
                     display_title="Humanas"
-                    course_id="1HUM"
-                    monitors={['Brenda Silveira', 'Mirella Vieira', 'Maria Melo', 'Yan Oliveira']}
-                />
-
-                <CourseDiv
-                    display_title="Humanas"
-                    course_id="2HUM"
-                    monitors={['Brenda Silveira', 'Mirella Vieira', 'Maria Melo', 'Yan Oliveira']}
-                />
-
-                <CourseDiv
-                    display_title="Humanas"
-                    course_id="3HUM"
+                    course_id="HUM"
                     monitors={['Brenda Silveira', 'Mirella Vieira', 'Maria Melo', 'Yan Oliveira']}
                 />
             </div>
