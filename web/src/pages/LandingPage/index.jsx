@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import './styles.css';
 
 import LandingPic from '../../assets/landing-pic.png';
-import heartIcon from '../../assets/icons/heart.svg';
+import clockIcon from '../../assets/icons/clock.svg';
 
 function LandingPage() {
     return (
@@ -23,10 +23,10 @@ function LandingPage() {
                         <Link to="/courses" className="enter">
                             Acessar aulas
                         </Link>
-                        {/* <Link to="/" className="help">
-                            <img src={heartIcon} alt="Apoiar"/>
-                            <span>Apoiar</span>
-                        </Link> */}
+                        <Link to="/chatbot" className="time">
+                            <img src={clockIcon} alt="Agendar monitoria"/>
+                            <span>Agendar monitoria</span>
+                        </Link>
                     </div>
                 </div>
                 <div className="image">

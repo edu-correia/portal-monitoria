@@ -49,7 +49,7 @@ h1.monitoria{
     text-decoration: none;
 }
 
-.help{
+.time{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -61,6 +61,10 @@ h1.monitoria{
     font-family: 'Questrial', sans-serif;
     text-decoration: none;
     margin-top: 25px;
+}
+
+.time img{
+    width: 20px;
 }
 
 .image{
