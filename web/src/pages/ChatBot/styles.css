@@ -25,6 +25,15 @@
     overflow-y: auto;
 }
 
+.cb-messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cb-messages::-webkit-scrollbar-thumb {
+    background: #E035CF; 
+    border-radius: 4px;
+}
+
 .cb-send{
     width: 100%;
     height: 10%;

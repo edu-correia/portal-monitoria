@@ -81,7 +81,7 @@ function ChatBot() {
             }
 
             setData({...data, subject});
-            addNewMsg('Agora digite o número correspondente ao ano em que você está?<br/><b>1</b> - 1º ano<br/><b>2</b> - 2º ano<br/><b>3</b> - 3º e 4º ano');
+            addNewMsg('Agora digite o número correspondente ao ano em que você está?<br/><b>1</b> - 1º ano<br/><b>2</b> - 2º ano<br/><b>3</b> - 3º ou 4º ano');
             setStep(2);
             setInputMsg('');
             return;
@@ -97,7 +97,7 @@ function ChatBot() {
                     year = "2º ano";
                     break;
                 case '3': 
-                    year = "3º e 4º ano";
+                    year = "3º ou 4º ano";
                     break;
                 default:
                     addNewMsg('Resposta inválida!<br/>Tente novamente!');
@@ -133,7 +133,7 @@ function ChatBot() {
             let phone = inputMsg;
 
             setData({...data, phone});
-            addNewMsg('Qual o seu email?<small>Escolha um email que o monitor possa entrar em contato com você.</small>');
+            addNewMsg('Qual o seu email?<br/><small>Escolha um email que o monitor possa entrar em contato com você.</small>');
             setStep(6);
             setInputMsg('');
         }
@@ -153,7 +153,7 @@ function ChatBot() {
                     addNewMsg('Obrigado! Seus dados foram enviados ao monitor que atende as suas especificações!');
                     break;
                 case '2':
-                    addNewMsg('Problema!!!<button>Eae</button>');
+                    addNewMsg('Problema!!!');
                     break;
                 default:
                     addNewMsg('Resposta inválida!<br/>Tente novamente!');
