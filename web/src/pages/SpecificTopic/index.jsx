@@ -30,6 +30,7 @@ function SpecificTopic() {
         }
         getTopic();
         setCourseName(fullCourse(topic.course));
+        document.title = topic.title;
     }, [topic]);
 
     return (

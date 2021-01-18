@@ -54,6 +54,7 @@ function Topic() {
         })
 
         setCourseName(fullCourse(course));
+        document.title = fullCourse(course);
     },  []);
 
     return (
