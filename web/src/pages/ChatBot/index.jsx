@@ -1,4 +1,7 @@
 import {useState, useEffect} from 'react';
+import {Link} from 'react-router';
+
+import api from '../../services/api';
 
 import NavBar from '../../components/NavBar';
 
@@ -29,6 +32,10 @@ function ChatBot() {
     const [inputMsg, setInputMsg] = useState("");
     const [step, setStep] = useState(1);
     const [data, setData] = useState({});
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [resultTitle, setResultTitle] = useState('');
+    const [resultMessage, setResultMessage] = useState('');
+    const [resultStatus, setResultStatus] = useState('');
 
     useEffect(() => {
         const objDiv = document.getElementById('abc');
@@ -39,11 +46,23 @@ function ChatBot() {
         setMessages([...messages, {from: 'client', msg: inputMsg}, {from: 'bot', msg}]);
     }
 
-    function sendData(){
-        console.log(data)
+    async function sendData(){
+        api.post('notify', data).then(response => {
+            if(response.status === 201) {
+                setIsPopupOpen(true);
+                setResultTitle('Sucesso');
+                setResultMessage('Seus dados foram enviados aos monitores, muito obrigado!');
+                setResultStatus('success');
+            }
+        }).catch(err => {
+            setIsPopupOpen(true);
+            setResultTitle('Erro');
+            setResultMessage('Ocorreu um erro, tente novamente! Se acreditar que isso é um erro, por favor reporte o erro clicado no botão abaixo.');
+            setResultStatus('error');
+        })
     }
 
-    function handleMessage(){ 
+    async function handleMessage(){ 
         if(step === 1){
             let subject;
             switch(inputMsg){
@@ -150,7 +169,8 @@ function ChatBot() {
         if(step === 7){
             switch (inputMsg) {
                 case '1':
-                    addNewMsg('Obrigado! Seus dados foram enviados ao monitor que atende as suas especificações!');
+                    await sendData();
+                    addNewMsg('Processando dados...');
                     break;
                 case '2':
                     addNewMsg('Problema!!!');
@@ -161,7 +181,6 @@ function ChatBot() {
             }
             setStep(8);
             setInputMsg('');
-            sendData();
         }
     }
 
@@ -188,11 +207,19 @@ function ChatBot() {
                     <button onClick={handleMessage}>
                         <SendIcon className="send-icon"/>
                     </button>
-                    <button onClick={() => window.location.href = `${window.location.origin}/chatbot`}>
-                        <ReloadIcon className="send-icon"/>
-                    </button>
                 </div>
             </div>
+
+            {isPopupOpen && (
+                <div className="result">
+                    <dix className={`result-box ${resultStatus}`}>
+                        <h1>{resultTitle}!</h1>
+                        <p>{resultMessage}</p>
+                        <a href={resultStatus === 'success' ? `${window.location.origin}` : `${window.location.origin}/chatbot`} className={`result-btn ${resultStatus}`} ></a>
+                        <button className="close-result" onClick={() => setIsPopupOpen(false)}>&times;</button>
+                    </dix>
+                </div>
+            )}
         </>
     )
 }

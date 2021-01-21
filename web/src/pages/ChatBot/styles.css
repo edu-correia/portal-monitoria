@@ -18,7 +18,7 @@
 
 .cb-messages{
     width: 100%;
-    height: 90%;
+    height: calc(100% - 50px);
     border-radius: 8px 8px 0 0;
     padding: 10px;
     box-sizing: border-box;
@@ -36,7 +36,7 @@
 
 .cb-send{
     width: 100%;
-    height: 10%;
+    height: 50px;
     border-top: 2px solid #EDD712;
     border-radius: 0 0 8px 8px;
     padding: 10px;
@@ -59,8 +59,8 @@
 }
 
 .cb-send button{
-    width: calc((100vh - 82px - 20vh) / 10 - 15px);
-    height: calc((100vh - 82px - 20vh) / 10 - 15px);
+    width: 30px;
+    height: 30px;
     background: transparent;
     border: 1px solid #E035CF;
     border-radius: 4px;
@@ -118,4 +118,110 @@
 
 .client img{
     margin-left: 10px;
+}
+
+.result{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.result-box{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #202020 !important;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.result-box h1{
+    font-weight: 400;
+    font-family: 'Questrial';
+    color: #fff;
+    font-size: 28px;
+}
+
+.result-box p{
+    font-weight: 400;
+    font-family: 'Quicksand';
+    color: #fff;
+    font-size: 16px;
+}
+
+.success{
+    border: 2px solid #00ff00;
+    background: #00ff00;
+}
+
+.error{
+    border: 2px solid #ff0000;
+    background: #ff0000;
+}
+
+a.success::after{
+    content: 'Voltar à página inicial';
+}
+
+a.error::after{
+    content: 'Reportar erro';
+}
+
+.result-btn{
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+    font-family: 'Ubuntu';
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    color: #000;
+    text-decoration: none;
+}
+
+.close-result{
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: #C20A0A;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .cb-title{
+        display: none;
+    }
+
+    .chatbot-div{
+        width: 100vw;
+        height: calc(100vh - 82px);
+        border-radius: 0px;
+        margin-top: 0px;
+    }
+
+    .msg{
+        max-width: 80%;
+    }
 }
