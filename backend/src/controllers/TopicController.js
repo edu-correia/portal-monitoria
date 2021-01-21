@@ -1,19 +1,19 @@
 const knex = require('../database');
 
-module.exports = {
+class TopicController{
     async getFiltered(req, res){
         const { subject } = req.query;
     
         let results;
     
         if(subject) {
-            results = await knex('topics').where('course', subject);
+            results = await knex('topics').select('id', 'title', 'subject', 'course', 'author').where('course', subject);
         }else{
-            results = await knex('topics');
+            results = await knex('topics').select('id', 'title', 'subject', 'course', 'author');
         }
     
         return res.status(200).json(results);
-    },
+    }
 
     async create(req, res){
         const {
@@ -31,7 +31,7 @@ module.exports = {
         }
     
         return res.status(201).json({message: 'Success!'});
-    },
+    }
 
     async getSpecific(req, res){
         const { id } = req.params;
@@ -46,3 +46,5 @@ module.exports = {
         return res.status(200).json(result[0]);
     }
 }
+
+module.exports = new TopicController();
