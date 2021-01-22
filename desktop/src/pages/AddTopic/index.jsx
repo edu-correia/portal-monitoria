@@ -29,7 +29,7 @@ function AddTopic(){
         api.post('topics', data).then((response) => {
             if(response.status === 201) alert('Success!');
           }, (error) => {
-            console.log(error);
+            alert(`ERRO: ${error.message}`);
           });
     }
 

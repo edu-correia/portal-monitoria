@@ -45,6 +45,10 @@
     resize: vertical;
 }
 
+iframe{
+    width: 100%;
+}
+
 .add-btn{
     width: 100px;
     height: 32px;
