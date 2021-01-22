@@ -17,6 +17,10 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
+.not-found-page p{
+    text-align: center;
+}
+
 .nfp-link{
     padding: 20px;
     background: #E035CF;
