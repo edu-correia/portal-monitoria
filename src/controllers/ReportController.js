@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-module.exports = {
+class ReportController{
     async send(req, res) {
         const { name, title, text, topic_id, type } = req.body;
 
@@ -31,3 +31,5 @@ module.exports = {
         return res.status(201).json({message: 'Success!'});
     }
 }
+
+module.exports = new ReportController();
