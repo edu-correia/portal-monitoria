@@ -141,3 +141,8 @@ iframe{
 .pv-box{
     font-family: 'Quicksand', sans-serif;
 }
+
+.pv-box code{
+    background: #f3df2c;
+    font-family: 'Quicksand', sans-serif;
+}

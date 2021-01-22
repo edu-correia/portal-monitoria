@@ -19,7 +19,7 @@ import SideBar from '../../components/SideBar';
 import './styles.css';
 
 function Markdown(){
-    const [tab, setTab] = useState(1);
+    const [tab, setTab] = useState(5);
 
     function handleForwardMove(){
         if(tab === 9){
@@ -87,63 +87,194 @@ function Markdown(){
                     {
                         tab === 1 && (
                             <div className="tab-content">
-                                Texto
+                                <h1>Formatação de texto:</h1>
+                                <div className="code">
+                                    <p>
+                                        É bem fácil fazer algumas palavras ficarem em **negrito** e outras em *itálico*. Caso queira, você pode deixar uma palavra `grifada` e até adicionar uma citação!
+                                    </p><br/>
+
+                                    Einstein uma vez disse:<br/>
+                                    {'>'} Me chamo Albert!
+
+                                    <br/><br/># Você também <br/>
+                                    ## pode colocar <br/>
+                                    ### títulos e <br/>
+                                    #### sub-títulos de <br/>
+                                    ##### diversos tamanhos! <br/>
+                                    ###### Fácil né?
+
+                                    <br/><br/>
+                                    Com o {'<br/>'} você pode quebrar linhas!
+                                </div>
+                                <div className="demo">
+                                    É bem fácil fazer algumas palavras ficarem em <b>negrito</b> e outras em <i>itálico</i>. Caso queira, você pode deixar uma palavra <mark>grifada</mark> e até adicionar uma citação!
+
+                                    <br/><br/>Einstein uma vez disse:<br/>
+                                    <blockquote>Me chamo Albert!</blockquote>
+                                    <br/><br/>
+                                    <h1>Você também</h1>
+                                    <h2>pode colocar</h2>
+                                    <h3>títulos e</h3>
+                                    <h4>sub-títulos de</h4>
+                                    <h5>diversos tamanhos!</h5>
+                                    <h6>Fácil né?</h6>
+                                    <br/>
+                                    Com o <br/> você pode quebrar linhas!
+                                </div>
                             </div>
                         )
                     }
                     {
                         tab === 2 && (
                             <div className="tab-content">
-                                Imagem
+                                <h1>Adicionar uma imagem:</h1>
+                                <div className="code">
+                                    Você pode adicionar uma imagem assim:
+
+                                    <br/><br/>
+
+                                    ![Nome alternativo da imagem](https://precoltec.com.br/wp-content/uploads/2018/06/cotil_site.png)
+                                </div>
+                                <div className="demo">
+                                    Você pode adicionar uma imagem assim:<br/>
+                                    <img src="https://precoltec.com.br/wp-content/uploads/2018/06/cotil_site.png" alt="Nome alternativo a imagem"/>
+                                </div><br/><br/>
+                                <p>Vídeo mostrando como subir sua imagem no Imgur e colocar no seu resumo:</p>
+
                             </div>
                         )
                     }
                     {
                         tab === 3 && (
                             <div className="tab-content">
-                                Listas
+                                <h1>Como adicionar listas:</h1>
+                                <div className="code">
+                                    Em alguns momentos, você vai querer uma lista de caixas de seleção:
+                                    <br/><br/>
+                                    - [x] Completo<br/>
+                                    - [ ] Incompleto<br/>
+
+                                    <br/><br/>
+
+                                    Em outros momentos, você vai querer uma lista de bolinhas:
+                                    <br/><br/>
+                                    * Comece a linha com um asterisco<br/>
+                                    * Sucesso!
+
+                                    <br/><br/>
+
+                                    Do mesmo modo,<br/>
+
+                                    - traços também funcionam também<br/>
+                                    - E se você tiver sub-tópicos, coloque 2 espaços antes do traço ou do asterisco:<br/>
+                                    <p className="tabSpace">- Assim</p>
+                                    <p className="tabSpace">- e assim!</p>
+                                </div>
+
+                                <div className="demo">
+                                    Em alguns momentos, você vai querer listas numeradas:
+                                    <br/><br/>
+                                    <ul>
+                                        <li><input disabled checked type="checkbox"/> Completo</li>
+                                        <li><input disabled type="checkbox"/> Incompleto</li>
+                                    </ul>
+                                    <br/><br/>
+                                    Em outros momentos, você vai querer uma lista de bolinhas:
+                                    <br/><br/>
+                                    <li>Comece a linha com um asterisco</li>
+                                    <li>Sucesso!</li>
+                                    <br/>
+
+                                    Do mesmo modo,<br/>
+
+                                    <ul>
+                                        <li>traços também funcionam!</li>
+                                        <li>E se você tiver sub-tópicos, coloque 2 espaços antes do traço ou do asterisco:</li>
+                                        <ul>
+                                            <li className="bigTabSpace">Assim</li>
+                                            <li className="bigTabSpace">e assim!</li>
+                                        </ul>
+                                    </ul>
+                                    
+                                </div>
                             </div>
                         )
                     }
                     {
                         tab === 4 && (
                             <div className="tab-content">
-                                Links
+                                <h1>Como adicionar links:</h1>
+                                <div className="code">
+                                    Para adicionar links é bem fácil, é só fazer assim:<br/>
+
+                                    [Clique aqui](https://google.com) para ser redirecionado para o Google!
+                                </div>
+                                <div className="demo">
+                                    Para adicionar links é bem fácil, é só fazer assim:<br/>
+
+                                    <a href="https://google.com">Clique aqui</a> para ser redirecionado para o Google!
+                                </div>
                             </div>
                         )
                     }
                     {
                         tab === 5 && (
                             <div className="tab-content">
-                                Tabelas
+                                <h1>Como adicionar tabelas:</h1>
+                                <div className="code">
+                                    Para adicionar uma tabela, você só precisa dividir as células com o símbolo "|"(Barra Vertical), assim:<br/><br/>
+
+                                    título 1 |título 2<br/>
+                                    ---------|---------<br/>
+                                    conteúdo1|conteúdo2<br/>
+                                    conteúdo3|conteúdo4<br/>
+                                </div>
+                                <div className="demo">
+                                    Para adicionar uma tabela, você só precisa dividir as células com o símbolo "|" (Barra Vertical), assim:<br/><br/>
+
+                                    <table>
+                                        <tr>
+                                            <th>título 1</th>
+                                            <th>título 2</th>
+                                        </tr>
+                                        <tr>
+                                            <td>conteúdo1</td>
+                                            <td>conteúdo2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>conteúdo3</td>
+                                            <td>conteúdo4</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         )
                     }
                     {
                         tab === 6 && (
                             <div className="tab-content">
-                                Código
+                                <h1>Como anexar código:</h1>
                             </div>
                         )
                     }
                     {
                         tab === 7 && (
                             <div className="tab-content">
-                                Vídeo
+                                <h1>Como anexar vídeos:</h1>
                             </div>
                         )
                     }
                     {
                         tab === 8 && (
                             <div className="tab-content">
-                                Mapa mental
+                                <h1>Como anexar mapas mentais:</h1>
                             </div>
                         )
                     }
                     {
                         tab === 9 && (
                             <div className="tab-content">
-                                Formulários
+                                <h1>Como anexar formulários:</h1>
                             </div>
                         )
                     }

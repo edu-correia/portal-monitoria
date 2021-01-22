@@ -3,7 +3,7 @@
     height: 300px;
     background: #101010;
     border-radius: 0 16px 16px 0;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: calc((100vh - 300px) / 2);
     display: flex;
