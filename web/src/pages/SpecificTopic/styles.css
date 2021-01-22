@@ -61,6 +61,7 @@
     position: absolute;
     padding: 15px;
     box-sizing: border-box;
+    min-height: 200px;
 }
 
 /*  */
@@ -128,7 +129,7 @@ iframe{
 
     .topic-content{
         width: 90%;
-        margin: -80px 5% 0 5%;
+        margin: -60px 5% 0 5%;
     }
 
     .topic-return{

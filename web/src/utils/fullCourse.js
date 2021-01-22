@@ -30,6 +30,9 @@ function fullCourse(course){
         case 'HUM':
             courseName = 'Humanas';
         break;
+        default:
+            return "Matéria não encontrada";
+            break;
     }
 
     return `${courseName} - ${course[0]}º ano`;

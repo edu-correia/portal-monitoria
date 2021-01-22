@@ -26,6 +26,9 @@ function SpecificTopic() {
         async function getTopic() {
             await api.get(`/specific/${id}`).then(res => {
                 setTopic(res.data);
+            }).catch(err => {
+                alert('Tópico não encontrado!');
+                window.location.href = window.location.origin;
             });
         }
         getTopic();
