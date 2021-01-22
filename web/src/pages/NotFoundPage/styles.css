@@ -1,0 +1,26 @@
+.not-found-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 60vh;
+    margin-top: 20vh;
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.not-found-page h1{
+    color: #EDD712;
+    font-size: 7rem;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.nfp-link{
+    padding: 20px;
+    background: #E035CF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+}

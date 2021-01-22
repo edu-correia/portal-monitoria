@@ -5,6 +5,7 @@ import Topic from './pages/Topic';
 import SpecificTopic from './pages/SpecificTopic';
 import Courses from './pages/Courses';
 import ChatBot from './pages/ChatBot';
+import NotFoundPage from './pages/NotFoundPage';
 
 import './global.css';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/specific-topic/:id" component={SpecificTopic} />
         <Route path="/courses" component={Courses} />
         <Route path="/chatbot" component={ChatBot} />
+        <Route path="*" component={NotFoundPage} />
       </Switch>
     </BrowserRouter>
   );

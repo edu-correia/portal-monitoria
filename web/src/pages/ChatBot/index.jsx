@@ -1,12 +1,11 @@
 import {useState, useEffect} from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 import api from '../../services/api';
 
 import NavBar from '../../components/NavBar';
 
 import {ReactComponent as SendIcon} from '../../assets/icons/send.svg';
-import {ReactComponent as ReloadIcon} from '../../assets/icons/reload.svg'
 import botImg from '../../assets/bot-img.png';
 import clientImg from '../../assets/client-img.png';
 
@@ -215,7 +214,7 @@ function ChatBot() {
                     <dix className={`result-box ${resultStatus}`}>
                         <h1>{resultTitle}!</h1>
                         <p>{resultMessage}</p>
-                        <a href={resultStatus === 'success' ? `${window.location.origin}` : `${window.location.origin}/chatbot`} className={`result-btn ${resultStatus}`} ></a>
+                        <Link as="a" to={resultStatus === 'success' ? `/` : `/chatbot`} className={`result-btn ${resultStatus}`} ></Link>
                         <button className="close-result" onClick={() => setIsPopupOpen(false)}>&times;</button>
                     </dix>
                 </div>
