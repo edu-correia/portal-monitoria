@@ -171,7 +171,7 @@ function ChatBot() {
             switch (inputMsg) {
                 case '1':
                     await sendData();
-                    addNewMsg('Processando dados...');
+                    addNewMsg('Processando seus dados!<br/>Aguarde um momentinho...');
                     break;
                 case '2':
                     addNewMsg('Problema!!!');
