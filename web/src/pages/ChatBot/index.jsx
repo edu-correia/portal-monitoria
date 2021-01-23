@@ -62,6 +62,8 @@ function ChatBot() {
     }
 
     async function handleMessage(){ 
+        document.getElementById('text').focus();
+        
         if(step === 1){
             let subject;
             switch(inputMsg){
@@ -202,7 +204,7 @@ function ChatBot() {
                     }
                 </div>
                 <div className="cb-send">
-                    <input type="text" value={inputMsg} onChange={e => setInputMsg(e.target.value)} onKeyPress={(e) => {if(e.key === 'Enter') handleMessage()}}/>
+                    <input type="text" value={inputMsg} onChange={e => setInputMsg(e.target.value)} onKeyPress={(e) => {if(e.key === 'Enter') handleMessage()}} id="text"/>
                     <button onClick={handleMessage}>
                         <SendIcon className="send-icon"/>
                     </button>

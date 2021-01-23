@@ -1,6 +1,6 @@
 .course-div{
     width: 100%;
-    height: 130px;
+    height: 150px;
     background: #101010;
     border-radius: 8px;
     border-bottom: 4px solid #EDD712;
@@ -60,7 +60,7 @@
 .course-monitors li{
     font-family: 'Quicksand', sans-serif;
     color: #888;
-    font-size: 12px;
+    font-size: 14px;
     list-style: none;
 }
 
@@ -70,14 +70,14 @@
 }
 
 /* Responsividade */
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 900px){
     .course-div{
         margin-bottom: 20px;
-        height: 170px;
+        height: 180px;
     }
 
     .course-link{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .course-title{
@@ -87,5 +87,9 @@
     .monitor-list{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .course-monitors li{
+        font-size: 12px;
     }
 }
