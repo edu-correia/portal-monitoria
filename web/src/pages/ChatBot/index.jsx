@@ -144,7 +144,7 @@ function ChatBot() {
             let name = inputMsg;
 
             setData({...data, name});
-            addNewMsg('Qual é o número do celular?<br/><small>Número pra entrar em contato por whatsapp</small>');
+            addNewMsg('Qual é o número do celular?<br/><small>Número pra entrar em contato por whatsapp<br/>Ex: 98765-4321</small>');
             setStep(5);
             setInputMsg('');
         }
@@ -153,28 +153,37 @@ function ChatBot() {
             let phone = inputMsg;
 
             setData({...data, phone});
-            addNewMsg('Qual o seu email?<br/><small>Escolha um email que o monitor possa entrar em contato com você.</small>');
+            addNewMsg('Qual o seu RA?');
             setStep(6);
             setInputMsg('');
         }
 
         if(step === 6){
-            let email = inputMsg;
+            let ra = inputMsg;
 
-            setData({...data, email});
-            addNewMsg(`${data.name}, confira se seus dados estão corretos:<br/><b>Nome:</b> ${data.name}<br/><b>Email:</b> ${email}<br/><b>Telefone:</b> ${data.phone}<br/><b>Matéria:</b> ${data.subject}<br/><b>Ano:</b> ${data.year}<br/><b>Tópico:</b> ${data.topic}<br/>Digite <b>1</b> para "Sim, meus dados estão corretos!"<br/>Digite <b>2</b> para "Não, meus dados não estão corretos!"`);
+            setData({...data, ra});
+            addNewMsg('Qual o seu email?(Email institucional)<br/><small>Ex: cl*****@g.unicamp.br.</small>');
             setStep(7);
             setInputMsg('');
         }
 
         if(step === 7){
+            let email = inputMsg;
+
+            setData({...data, email});
+            addNewMsg(`${data.name}, confira se seus dados estão corretos:<br/><b>Nome:</b> ${data.name}<br/><b>RA:</b> ${data.ra}<br/><b>Email:</b> ${email}<br/><b>Telefone:</b> ${data.phone}<br/><b>Matéria:</b> ${data.subject}<br/><b>Ano:</b> ${data.year}<br/><b>Tópico:</b> ${data.topic}<br/>Digite <b>1</b> para "Sim, meus dados estão corretos!"<br/>Digite <b>2</b> para "Não, meus dados não estão corretos!"`);
+            setStep(8);
+            setInputMsg('');
+        }
+
+        if(step === 8){
             switch (inputMsg) {
                 case '1':
                     await sendData();
                     addNewMsg('Processando seus dados!<br/>Aguarde um momentinho...');
                     break;
                 case '2':
-                    addNewMsg('Problema!!!');
+                    addNewMsg('Clique nese botão para refazer o cadastro:<br/><a href="/chatbot" class="reset-cb">Tentar novamente</a>');
                     break;
                 default:
                     addNewMsg('Resposta inválida!<br/>Tente novamente!');

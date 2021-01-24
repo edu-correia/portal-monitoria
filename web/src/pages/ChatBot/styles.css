@@ -209,6 +209,16 @@ a.error::after{
     cursor: pointer;
 }
 
+.reset-cb{
+    padding: 2px;
+    border-radius: 4px;
+    background: #EDD712;
+    color: #101010;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 12px;
+}
+
 @media only screen and (max-width: 600px) {
     .cb-title{
         display: none;

@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 class NotifyController{
     async sendEmail(req, res){
-        const { name, email, phone, topic, subject, year } = req.body;
+        const { name, email, phone, topic, subject, year, ra } = req.body;
     
         const transporter = nodemailer.createTransport({
             host: process.env.TRANSPORT_HOST,
@@ -53,7 +53,7 @@ class NotifyController{
                 from: `Portal Monitoria <${process.env.TRANSPORT_EMAIL}>`,
                 to: monitors,
                 subject: `Monitoria de ${subject}`,
-                html: `<p>Olá monitor, ${name} do ${year} deseja marcar uma monitoria com você, o tema que ele deseja abordar é: <b>${topic}</b>.<h2>Contatos do aluno:</h2><span><b>Email:</b> ${email}</span><br><span><b>Telefone:</b> ${phone}</span><p><a href="https://api.whatsapp.com/send?phone=5519${phone}&text=Ol%C3%A1,%20vamos%20marcar%20a%20sua%20monitoria?" style="padding:10px;background-color: #25D366;color:#fff;"><b>Entrar em contato pelo whatsapp</b></a></p>`,
+                html: `<p>Olá monitor, ${name}(RA: ${ra}) do ${year} deseja marcar uma monitoria com você, o tema que ele deseja abordar é: <b>${topic}</b>.<h2>Contatos do aluno:</h2><span><b>Email:</b> ${email}</span><br><span><b>Telefone:</b> ${phone}</span><p><a href="https://api.whatsapp.com/send?phone=5519${phone}&text=Ol%C3%A1,%20vamos%20marcar%20a%20sua%20monitoria?" style="padding:10px;background-color: #25D366;color:#fff;"><b>Entrar em contato pelo whatsapp</b></a></p>`,
             });
         } catch (error) {
             return res.status(404).json({message: error});

@@ -6,5 +6,6 @@ module.exports = yup.object().shape({
     phone: yup.string().required().min(9),
     subject: yup.string().required(),
     topic: yup.string().required(),
-    year: yup.string().required()
+    year: yup.string().required(),
+    ra: yup.string().required()
 })
