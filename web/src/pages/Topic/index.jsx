@@ -21,6 +21,7 @@ function Topic() {
     const [whichPopup, setWhichPopup] = useState(null);
     const [topics, setTopics] = useState([]);
     const [courseName, setCourseName] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const {course} = useParams();
 
@@ -50,7 +51,10 @@ function Topic() {
 
     useEffect(() => {
         api.get(`/topics?subject=${course}`).then(res => {
-            setTopics(res.data);
+            setTimeout(() => {
+                setTopics(res.data);
+                setIsLoading(false);
+            }, 500)
         })
 
         setCourseName(fullCourse(course));
@@ -61,29 +65,36 @@ function Topic() {
         <>
             <NavBar />
             <p className="title">{courseName}</p>
-            {topics.length === 0 ? (
-                        <div className="topics-empty">
-                            <img src={emptyIcon} alt="Vazio"/>
-                            <span>Ops! Parece que essa matéria ainda não possui conteúdo.</span>
-                        </div>
-                    ) : (
-                        <div className="topics-container">
-                            {topics.map((topic) => {
-                                return (
-                                    <TopicDiv
-                                        key={topic.id}
-                                        title={topic.title}
-                                        subject={topic.subject}
-                                        author={topic.author}
-                                        id={topic.id}
-                                        children={<ReportButton func={setWhichPopup} id={topic.id}/>}
-                                    />
-                                )
-                            })}
-                        </div>
-                    )
-                }
-            
+            {isLoading && (
+                <div className="loading">
+                    <h1>Carregando</h1>
+                    <div className="spinner">
+                        
+                    </div>
+                </div>
+            )}
+
+            {(!isLoading && (topics.length === 0)) ? (
+                <div className="topics-empty">
+                    <img src={emptyIcon} alt="Vazio"/>
+                    <span>Ops! Parece que essa matéria ainda não possui conteúdo.</span>
+                </div>
+            ) : (
+                <div className="topics-container">
+                    {topics.map((topic) => {
+                        return (
+                            <TopicDiv
+                                key={topic.id}
+                                title={topic.title}
+                                subject={topic.subject}
+                                author={topic.author}
+                                id={topic.id}
+                                children={<ReportButton func={setWhichPopup} id={topic.id}/>}
+                            />
+                        )
+                    })}
+                </div>
+            )}
 
             {whichPopup !== null ? (
                 <div className="report-popup">

@@ -155,6 +155,63 @@
     font-family: 'Questrial', sans-serif;
 }
 
+.loading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.loading h1{
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.loading h1::after{
+    content: '';
+    animation: 2s loading-text infinite;
+}
+
+@keyframes loading-text{
+    0%{
+        content: '';
+    }
+
+    25%{
+        content: '.';
+    }
+
+    50%{
+        content: '..';
+    }   
+
+    75%{
+        content: '...';
+    }
+    
+    100%{
+        content: '';
+    }
+}
+
+.spinner{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.335);
+    border-top-color: #fff;
+    animation: 1s spin infinite ease-in-out;
+    margin-top: 20px;
+}
+
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
 /* Responsividade */
 @media only screen and (max-width: 600px) {
     .topics-container{
