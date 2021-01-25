@@ -90,7 +90,10 @@ function AddTopic(){
                                 <input value={subject} type="text" id="subject" onChange={(e) => setSubject(e.target.value)}/>
                             </div>
                             <div className="input-group">
-                                <label htmlFor="text">Conteúdo:</label>
+                                <div className="char-counter-div">
+                                    <label htmlFor="text">Conteúdo:</label>
+                                    <span>{content.length}/15000</span>
+                                </div>
                                 <textarea value={content} id="text" onChange={(e) => setContent(e.target.value)}></textarea>
                             </div>
                             <button className="add-btn" onClick={handleFormSubmit}>Criar</button> 
