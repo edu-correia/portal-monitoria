@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import api from '../../services/api';
 
@@ -32,6 +32,14 @@ function AddTopic(){
             alert(`ERRO: ${error.message}`);
           });
     }
+
+    useEffect(() => {
+        document.querySelectorAll('a').forEach((link, index) => {
+            if(index > 3){
+                link.target = '_blank';
+            }
+        });
+    }, [preview]);
 
     return (
         <>

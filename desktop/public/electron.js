@@ -1,6 +1,8 @@
 const {app, BrowserWindow, Menu} = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
+var shell = require('electron').shell;
+
 let mainWindow;
 function createWindow() {
     mainWindow = new BrowserWindow({ 
@@ -11,6 +13,10 @@ function createWindow() {
 
     mainWindow.maximize();
 
+    mainWindow.webContents.on('new-window', function(event, url){
+        event.preventDefault();
+        shell.openExternal(url);
+    });
     
     mainWindow.loadURL(
         isDev
