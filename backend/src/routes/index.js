@@ -22,5 +22,6 @@ router.post('/report', validateDto(reportDto), ReportController.send);
 
 // NotifyController
 router.post('/notify', validateDto(notifyDto), NotifyController.sendEmail);
+router.get('/notify', NotifyController.loadEmails);
 
 module.exports = router;

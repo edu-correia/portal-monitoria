@@ -1,8 +1,14 @@
+const knex = require('../database');
 const nodemailer = require('nodemailer');
-
 class NotifyController{
     async sendEmail(req, res){
         const { name, email, phone, topic, subject, year, ra } = req.body;
+
+        try {
+            await knex('classes').insert({name, email, phone, topic, subject, year, ra})
+        } catch (error) {
+            return res.status(404).json({message: error});
+        }
     
         const transporter = nodemailer.createTransport({
             host: process.env.TRANSPORT_HOST,
@@ -60,6 +66,18 @@ class NotifyController{
         }
 
         return res.status(201).json({message: 'Success!'});
+    }
+
+    async loadEmails(req, res){
+        let results;
+
+        try {
+            results = await knex('classes');
+        } catch (error) {
+            return res.status(404).json({message: error});
+        }
+
+        return res.status(200).json(results);
     }
 }
 

@@ -1,0 +1,37 @@
+.item-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.class-item h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.class-item div img{
+    width: 20px;
+    height: 20px;
+}
+
+.class-info{
+    width: 100%;
+    height: max-content;
+    border: 1px solid #e035cf;
+    padding: 4px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.info-item p{
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: #999;
+}
+
+.open{
+    border: 1px solid #EDD712;
+}
