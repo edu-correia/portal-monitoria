@@ -19,7 +19,7 @@ import SideBar from '../../components/SideBar';
 import './styles.css';
 
 function Markdown(){
-    const [tab, setTab] = useState(5);
+    const [tab, setTab] = useState(1);
 
     function handleForwardMove(){
         if(tab === 9){
@@ -140,7 +140,7 @@ function Markdown(){
                                     <img src="https://precoltec.com.br/wp-content/uploads/2018/06/cotil_site.png" alt="Nome alternativo a imagem"/>
                                 </div><br/><br/>
                                 <p>Vídeo mostrando como subir sua imagem no Imgur e colocar no seu resumo:</p>
-
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/TwGJgjTYUfs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         )
                     }
@@ -212,7 +212,7 @@ function Markdown(){
                                 <div className="demo">
                                     Para adicionar links é bem fácil, é só fazer assim:<br/>
 
-                                    <a href="https://google.com">Clique aqui</a> para ser redirecionado para o Google!
+                                    <a href="https://google.com" target="_blank">Clique aqui</a> para ser redirecionado para o Google!
                                 </div>
                             </div>
                         )
@@ -254,6 +254,7 @@ function Markdown(){
                         tab === 6 && (
                             <div className="tab-content">
                                 <h1>Como anexar código:</h1>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/VFhM1M9h8Zc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         )
                     }
@@ -261,6 +262,7 @@ function Markdown(){
                         tab === 7 && (
                             <div className="tab-content">
                                 <h1>Como anexar vídeos:</h1>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/aCYTXZ02t64" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         )
                     }
@@ -268,6 +270,7 @@ function Markdown(){
                         tab === 8 && (
                             <div className="tab-content">
                                 <h1>Como anexar mapas mentais:</h1>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/HXGaCEaIjUQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         )
                     }
@@ -275,6 +278,7 @@ function Markdown(){
                         tab === 9 && (
                             <div className="tab-content">
                                 <h1>Como anexar formulários:</h1>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/feorozCh1qo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         )
                     }
