@@ -27,7 +27,7 @@ function AddTopic(){
         }
 
         api.post('topics', data).then((response) => {
-            if(response.status === 201) alert('Success!');
+            if(response.status === 201) alert('Tópico criado com sucesso!');
           }, (error) => {
             alert(`ERRO: ${error.message}`);
           });

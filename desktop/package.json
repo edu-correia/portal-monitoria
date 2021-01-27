@@ -1,8 +1,8 @@
 {
-  "name": "react-electron",
+  "name": "portal-monitoria",
   "version": "0.1.0",
-  "description": "Simple boilerplate for developing an Electron app with React",
-  "author": "willjw3",
+  "description": "Portal monitoria é um aplicativo desktop feito para monitores postarem conteúdos e resumos.",
+  "author": "eduardo-ehsc",
   "build": {
     "appId": "react.electron",
     "win": {
