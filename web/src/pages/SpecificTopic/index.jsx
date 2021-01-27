@@ -23,18 +23,21 @@ function SpecificTopic() {
     const history = useHistory();
 
     useEffect(() => {
-        async function getTopic() {
-            await api.get(`/specific/${id}`).then(res => {
-                setTopic(res.data);
-            }).catch(err => {
-                alert('Tópico não encontrado!');
-                window.location.href = window.location.origin;
-            });
-        }
-        getTopic();
-        setCourseName(fullCourse(topic.course));
-        document.title = topic.title;
-    }, [topic]);
+        api.get(`/specific/${id}`).then(res => {
+            setTopic(res.data);
+            setTimeout(() => {
+                setCourseName(fullCourse(topic.course));
+                document.title = topic.title;
+                document.querySelectorAll('a').forEach(link => link.target = "_blank");
+            },  500)
+        }).catch(err => {
+            alert('Tópico não encontrado!');
+            window.location.href = window.location.origin;
+        });
+        
+        
+        
+    }, [topic.course]);
 
     return (
         <>

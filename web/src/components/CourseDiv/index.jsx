@@ -10,9 +10,9 @@ function CourseDiv({ display_title, course_id, monitors }){
                 <div className="course-monitors">
                     <span>Monitores:</span>
                     <ul className="monitor-list">
-                        {monitors.map((monitor) => {
+                        {monitors.map((monitor, index) => {
                             return (
-                                <li>{monitor}</li>
+                                <li key={index}>{monitor}</li>
                             )
                         })}
                     </ul>
