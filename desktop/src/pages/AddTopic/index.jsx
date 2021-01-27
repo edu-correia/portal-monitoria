@@ -14,7 +14,7 @@ function AddTopic(){
     const [author, setAuthor] = useState('');
     const [subject, setSubject] = useState('');
     const [course, setCourse] = useState('');
-    const [content, setContent] = useState('');
+    const [content, setContent] = useState(sessionStorage.getItem('content') || '');
     const [preview, setPreview] = useState(false);
 
     const handleFormSubmit = () => {
@@ -40,6 +40,10 @@ function AddTopic(){
             }
         });
     }, [preview]);
+
+    useEffect(() => {
+        sessionStorage.setItem('content', content);
+    },  [content]);
 
     return (
         <>
