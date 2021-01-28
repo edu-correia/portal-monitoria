@@ -24,7 +24,7 @@ class TopicController{
             content
         } = req.body;
     
-        try {
+        try {   
             await knex('topics').insert({title, subject, course, author, content});
         } catch (error) {
             return res.status(404).json({message: error});
