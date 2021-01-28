@@ -26,31 +26,31 @@ class NotifyController{
         let monitors = [];
         switch (subject) {
             case 'Enfermagem':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.ENF1, process.env.ENF2, process.env.ENF3, process.env.ENF4];
                 break;
             case 'Informática':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.INF1, process.env.INF2];
                 break;
             case 'Mecânica':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.MEC1, process.env.MEC2];
                 break;
             case 'Geodésia':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.GEO1, process.env.GEO2];
                 break;
             case 'Qualidade':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.QLD1, process.env.QLD2];
                 break;
             case 'Edificações':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.EDF1, process.env.EDF2];
                 break;
             case 'Humanas':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.HUM1, process.env.HUM2, process.env.HUM3, process.env.HUM4];
                 break;
             case 'Física e Matemática':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.FEM1, process.env.FEM2, process.env.FEM3, process.env.FEM4, process.env.FEM5];
                 break;
             case 'Biologia e Química':
-                monitors = [process.env.MONITOR1];
+                monitors = [process.env.BEQ1, process.env.BEQ2, process.env.BEQ3];
                 break;
         }
 

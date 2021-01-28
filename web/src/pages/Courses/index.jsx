@@ -13,7 +13,7 @@ function Courses() {
                 <CourseDiv 
                     display_title="Edificações"
                     course_id="EDF"
-                    monitors={['Luiza Camargo', 'Vitória Dias', 'Victória Rosa']}
+                    monitors={['Luiza Rafael', 'Vitória Dias', 'Victória Rosa']}
                 />
 
                 {/* Enfermagem */}
@@ -21,7 +21,7 @@ function Courses() {
                 <CourseDiv 
                     display_title="Enfermagem"
                     course_id="ENF"
-                    monitors={['Letícia Trindade', 'Ana Silva', 'Nathália Cunha', 'Marina Fonseca']}
+                    monitors={['Leticia Maboni', 'Ana Laura Fabris', 'Nathália Rocha', 'Marina Lucon']}
                 />
 
                 {/* Geodésia */}
@@ -29,7 +29,7 @@ function Courses() {
                 <CourseDiv 
                     display_title="Geodésia"
                     course_id="GEO"
-                    monitors={['Nicolas Chiarotti', 'Camilly Leite', 'Isabella Pinto']}
+                    monitors={['Nicolas Chiarotti', 'Camilly Claudino Leite', 'Isabella de Matos']}
                 />
 
                 {/* Informática */}
@@ -45,7 +45,7 @@ function Courses() {
                 <CourseDiv
                     display_title="Mecânica"
                     course_id="MEC"
-                    monitors={['Felipi Santos', 'Guilherme Rodrigues', 'Lorena Milani', 'Vinícius Silva']}
+                    monitors={['Felipi Vieira', 'Guilherme Rocha', 'Lorena Milani', 'Vinícius Silva']}
                 />
 
                 {/* Qualidade */}
@@ -53,7 +53,7 @@ function Courses() {
                 <CourseDiv
                     display_title="Qualidade"
                     course_id="QLD"
-                    monitors={['Giovanna Jürgensen', 'Mayara Fonseca']}
+                    monitors={['Giovanna Jürgensen', 'Mayara Ferraz']}
                 />
 
                 {/*Biologia e Química*/}
@@ -61,7 +61,7 @@ function Courses() {
                 <CourseDiv
                     display_title="Biologia e Química"
                     course_id="BEQ"
-                    monitors={['Gabriella Rezende', 'Rebecca Almeida', 'Wendy Anjos']}
+                    monitors={['Gabriella Rezende', 'Rebecca Vidigal', 'Wendy Anjos']}
                 />
 
                 {/*Física e Matemática*/}
@@ -69,7 +69,7 @@ function Courses() {
                 <CourseDiv
                     display_title="Física e Matemática"
                     course_id="FEM"
-                    monitors={['Vitória Nicoleti', 'Raphael Penachioni', 'Gustavo Granjeia', 'Ana Santos', 'Marília Jampani', 'Iuri Barbosa']}
+                    monitors={['Vitória Yumi', 'Raphael Penachioni', 'Gustavo Granjeia', 'Ana Caroline Martins', 'Marília Jampani', 'Iuri Barbosa']}
                 />
 
                 {/*Humanas*/}
@@ -77,7 +77,7 @@ function Courses() {
                  <CourseDiv
                     display_title="Humanas"
                     course_id="HUM"
-                    monitors={['Brenda Silveira', 'Mirella Vieira', 'Maria Melo', 'Yan Oliveira']}
+                    monitors={['Brenda Pretel', 'Mirella Furtado', 'Maria Clara Herreria', 'Yan Correia']}
                 />
             </div>
         </>
