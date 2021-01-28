@@ -121,6 +121,8 @@ function Markdown(){
                                     <br/>
                                     Com o <br/> você pode quebrar linhas!
                                 </div>
+                                <br/>
+                                Obs: Dê um 'Enter' depois de usar um {'"<br/>"'}
                             </div>
                         )
                     }

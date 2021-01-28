@@ -32,8 +32,8 @@
 }
 
 .input-group textarea{
-    height: 150px;
-    min-height: 150px;
+    height: max-content;
+    min-height: 250px;
     font-family: 'Quicksand', sans-serif;
     background: #101010;
     color: white;
@@ -43,6 +43,15 @@
     border-radius: 4px;
     outline: none;
     resize: vertical;
+}
+
+.input-group textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.input-group textarea::-webkit-scrollbar-thumb {
+    background: #EDD712; 
+    border-radius: 2px;
 }
 
 iframe{
