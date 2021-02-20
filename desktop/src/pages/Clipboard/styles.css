@@ -97,12 +97,21 @@
     box-sizing: border-box;
     margin-left: 5%;
     border-radius: 4px;
-    background: #fff;
-    border: none;
+    background: transparent;
+    border: 1px solid #EDD712;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #EDD712;
+    outline: none;
 }
 
 .results{
     width: 70%;
     height: 100%;
     overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
