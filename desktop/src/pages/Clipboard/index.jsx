@@ -50,7 +50,98 @@ function Clipboard(){
             <Header />
             <SideBar active="clipboard"/>
             <div className="classes">
-                
+                <div className="filter">
+                    <h2>Filtros</h2>
+                    <div className="options">
+                        <div className="filter-group">
+                            <span>Nome:</span>
+                            <input type="text"/>
+                        </div>
+                        <div className="filter-group">
+                            <span>Curso:</span>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Enfermagem</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Edificações</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Geodésia</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Informática</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Mecânica</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Qualidade</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Física e Matemática</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Humanas</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">Biologia e Química</label>
+                            </div>
+                        </div>
+                        <div className="filter-group">
+                            <span>Série:</span>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">1º ano</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">2º ano</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="checkbox"/>
+                                <label htmlFor="">3º ano</label>
+                            </div>
+                        </div>
+                        <div className="filter-group">
+                            <span>Presente:</span>
+                            <div className="checkbox-group">
+                                <input type="radio"/>
+                                <label htmlFor="">Sim</label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input type="radio"/>
+                                <label htmlFor="">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="filter-btns">
+                        <button>Reset</button>
+                        <button>Filtrar</button>
+                    </div>
+                </div>
+                <div className="results">
+                    {filteredData.map(({topic, year, subject, ra, phone, name, email}, index) => (
+                        <ClassItem 
+                            key={index}
+                            topic={topic}
+                            year={year}
+                            ra={ra}
+                            subject={subject}
+                            phone={phone}
+                            name={name}
+                            email={email}
+                        />
+                    ))}
+                </div>
             </div>
         </>
     )
