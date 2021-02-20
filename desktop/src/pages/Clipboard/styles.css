@@ -2,71 +2,8 @@
     width: 80%;
     height: 70vh;
     margin: 50px auto 50px auto;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 50px;
-}
-
-.classes > div{
-    width: 100%;
-    height: 100%;
     background: #101010;
-    border-radius: 4px;
-    padding: 10px;
-    box-sizing: border-box;
-    max-height: 100%;
-}
-
-.classes-filter{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.filter-title{
+    border-radius: 8px;
     display: flex;
 }
 
-.filter-title h1{
-    color: #fff;
-    font-family: 'Ubuntu';
-    font-weight: 500;
-    font-size: 24px;
-    margin-left: 10px;
-}
-
-.reset-filter{
-    width: 100%;
-    height: 40px;
-    background: #e035cf;
-    border-radius: 4px;
-    border: none;
-    color: #101010;
-    font-family: 'Quicksand';
-    font-size: 20px;
-    outline: none;
-}
-
-.options-filter div{
-    margin-top: 10px;
-}
-
-.options-filter div label{
-    font-family: 'Quicksand', sans-serif;
-    color: #aaa;
-    margin-left: 10px;
-}
-
-.class-item{
-    overflow-y: auto;
-}
-
-.class-item::-webkit-scrollbar {
-    width: 6px;
-}
-
-.class-item::-webkit-scrollbar-thumb {
-    background: #EDD712; 
-    border-radius: 2px;
-}
