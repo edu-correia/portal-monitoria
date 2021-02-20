@@ -13,12 +13,60 @@ import reloadIcon from '../../assets/icons/reload.svg';
 
 function Clipboard(){
     const [data, setData] = useState([]);
+    const [filteredData, setFilteredData] = useState([]);
+    const [nameFilter, setNameFilter] = useState("");
+    const [courseFilter, setCourseFilter] = useState([]);
+    const [yearFilter, setYearFilter] = useState([]);
+    const [presenceFilter, setPresenceFilter] = useState(null);
 
     useEffect(() => {
         api.get('notify').then(res => {
             setData(res.data);
+            setFilteredData(res.data);
         });
     }, []);
+
+    function handleFilter(){
+        const filtered = data;
+
+        // Name filter
+        if(nameFilter !== ""){
+            filtered = filtered.filter(item => {
+                if(item.name.includes(nameFilter))
+                    return item;
+            });
+        }
+
+        // Course filter
+        if(courseFilter.length !== 0){
+            filtered = filtered.filter(item => {
+                courseFilter.forEach((filterItem, i) =>{
+                    if(item.subject === filterItem[i])
+                        return item;
+                })
+            });
+        }
+
+        // Year filter
+        if(yearFilter.length !== 0){
+            filtered = filtered.filter(item => {
+                yearFilter.forEach((filterItem, i) =>{
+                    if(item.year[0] === filterItem[i])
+                        return item;
+                });
+            });
+        }
+
+        // Presence filter
+        if(presenceFilter !== null){
+            filtered = filtered.filter(item => {
+                if(item.showedUp === presenceFilter)
+                    return item;
+            });
+        }
+
+        setFilteredData(filtered);
+    }
 
     return (
         <>
@@ -103,7 +151,7 @@ function Clipboard(){
                             <img src={reloadIcon} alt="Resetar"/>
                             <span>Reset</span>
                         </button>
-                        <button>
+                        <button onClick={handleFilter}>
                             <img src={filterIcon} alt="Filter"/>
                             <span>Filter</span>
                         </button>
