@@ -115,3 +115,9 @@
     padding: 20px;
     box-sizing: border-box;
 }
+
+.empty-result{
+    font-family: 'Questrial', sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
