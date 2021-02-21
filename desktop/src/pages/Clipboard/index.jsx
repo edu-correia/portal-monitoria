@@ -218,11 +218,11 @@ function Clipboard(){
                     <div className="filter-btns">
                         <button onClick={handleResetFilter}>
                             <img src={reloadIcon} alt="Resetar"/>
-                            <span>Reset</span>
+                            <span>Limpar</span>
                         </button>
                         <button onClick={handleFilter}>
                             <img src={filterIcon} alt="Filter"/>
-                            <span>Filter</span>
+                            <span>Filtrar</span>
                         </button>
                     </div>
                 </div>
