@@ -4,7 +4,7 @@ const router = express.Router();
 
 const ReportController = require('../controllers/ReportController');
 const TopicController = require('../controllers/TopicController');
-const NotifyController = require('../controllers/NotifyController');
+const ClassesController = require('../controllers/ClassesController');
 const MonitorController = require('../controllers/MonitorController');
 
 const validateDto = require('../middleware/validate-dto');
@@ -12,7 +12,7 @@ const authMiddleware = require('../middleware/auth');
 
 const topicDto = require('../dto/topic');
 const reportDto = require('../dto/report');
-const notifyDto = require('../dto/notify');
+const classesDto = require('../dto/classes');
 
 // MonitorController
 router.post('/register', MonitorController.register);
@@ -29,7 +29,7 @@ router.get('/specific/:id', TopicController.getSpecific);
 router.post('/report', validateDto(reportDto), ReportController.send);
 
 // NotifyController
-router.post('/notify', validateDto(notifyDto), NotifyController.sendEmail);
-router.get('/notify', NotifyController.loadEmails);
+router.post('/notify', validateDto(classesDto), ClassesController.create);
+router.get('/notify', ClassesController.list);
 
 module.exports = router;
