@@ -2,15 +2,13 @@ const knex = require('../database');
 
 class TopicController{
     async getFiltered(req, res){
-        const { subject } = req.query;
-    
-        let results;
-    
-        if(subject) {
-            results = await knex('topics').select('id', 'title', 'subject', 'course').where('course', subject);
-        }else{
-            results = await knex('topics').select('id', 'title', 'subject', 'course');
+        let filterObj = {};
+
+        for(var prop in req.query){
+            filterObj[prop] = req.query[prop];
         }
+    
+        const results = await knex('topics').join('monitors', 'monitors.id', 'topics.monitorId').select('topics.id', 'topics.title', 'topics.subject', 'topics.course', 'monitors.name').where(filterObj);
     
         return res.status(200).json(results);
     }
@@ -22,8 +20,6 @@ class TopicController{
             course,
             content
         } = req.body;
-
-
     
         try {   
             await knex('topics').insert({title, subject, course, content, monitorId: req.userId});
@@ -59,12 +55,12 @@ class TopicController{
         
         let result;
         try {
-            result = await knex('topics').where('id', id);
+            result = await knex('topics').join('monitors', 'monitors.id', 'topics.monitorId').select('topics.id', 'topics.title', 'topics.subject', 'topics.course', 'monitors.name').where({"topics.id": id});
         } catch (error) {
             return res.status(404).json({message: error});
         }
     
-        return res.status(200).json(result[0]);
+        return res.status(200).json(result);
     }
 }
 
