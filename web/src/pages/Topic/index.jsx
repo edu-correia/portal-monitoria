@@ -50,7 +50,7 @@ function Topic() {
     }
 
     useEffect(() => {
-        api.get(`/topics?subject=${course}`).then(res => {
+        api.get(`/topics?course=${course}`).then(res => {
             setTimeout(() => {
                 setTopics(res.data);
                 setIsLoading(false);
