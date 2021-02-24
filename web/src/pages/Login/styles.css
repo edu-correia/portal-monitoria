@@ -1,0 +1,75 @@
+.login-form{
+    margin: 20vh 35vw 20vh 35vw;
+    width: 30vw;
+    height: calc(60vh - 85px);
+    background: #101010;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    padding-top: 0px;
+    box-sizing: border-box;
+}
+
+.login-form h1{
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+}
+
+.login-input{
+    width: 100%;
+    height: 30px;
+    position: relative;
+}
+
+.login-input input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    outline: none;
+    background: #202020;
+    color: #fff;
+    padding-left: 36px;
+    border-left: 4px solid #edd712;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.login-input .input-icon{
+    position: absolute;
+    height: 24px;
+    width: auto;
+    top: 3px;
+    left: 8px;
+}
+
+.login-input .show{
+    position: absolute;
+    height: 16px;
+    width: auto;
+    top: 7px;
+    right: 4px;
+}
+
+.login-form button{
+    width: 160px;
+    height: 40px;
+    background: #e035cf;
+    border: none;
+    border-radius: 2px;
+    background: #e035cf;
+    box-shadow: 0 4px #950987;
+    outline: none;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    color: #101010;
+}
+
+.login-form button:active{
+    box-shadow: 0 2px #950987;
+    transform: translateY(2px);
+}

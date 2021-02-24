@@ -40,7 +40,7 @@ function useAuth(){
         setAuthenticated(true);
         localStorage.removeItem('token');
         api.defaults.headers.Authorization = undefined;
-        history.push('/login');
+        history.push('/');
     }
 
     return {authenticated, loading, handleLogin, handleLogout}
