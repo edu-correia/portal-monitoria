@@ -18,18 +18,22 @@ function useAuth(){
         setLoading(false);
     }, [])
 
-    async function handleLogin(){
+    async function handleLogin(email, password){
         const obj = {
-            email: "cl19118@g.unicamp.br",
-            password: "3102012"
+            email,
+            password
         }
 
-        const {data: {token}} = await api.post('/authenticate', obj);
+        try {
+            const {data: {token}} = await api.post('/authenticate', obj);
 
-        localStorage.setItem('token', JSON.stringify(token));
-        api.defaults.headers.Authorization = `Bearer ${token}`;
-        setAuthenticated(true);
-        history.push('/dashboard');
+            localStorage.setItem('token', JSON.stringify(token));
+            api.defaults.headers.Authorization = `Bearer ${token}`;
+            setAuthenticated(true);
+            history.push('/dashboard');
+        } catch (error) {
+            console.log("Error");
+        }
     }
 
     function handleLogout(){

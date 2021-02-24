@@ -1,19 +1,25 @@
-import {useContext} from 'react';
+import {useContext, useState} from 'react';
 
 import {Context} from '../../Context/AuthContext';
 
 import './styles.css';
 
 function Login(){
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [isShowingPass, setIsShowingPass] = useState(false);
+    const {handleLogin} = useContext(Context);
 
-    const {authenticated, handleLogin} = useContext(Context);
+    function handleShowPass(){
+        setIsShowingPass(!isShowingPass);
+    }
 
-    console.log(authenticated);
     return(
         <>
-            <input type="text" placeholder="Email"/>
-            <input type="text" placeholder="Senha"/>
-            <button onClick={handleLogin}>Entrar</button>
+            <button onClick={handleShowPass}>Show pass</button>
+            <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input type={isShowingPass ? "text" : "password"} placeholder="Senha" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <button onClick={() => handleLogin(email, password)}>Entrar</button>
         </>
     );
 }
