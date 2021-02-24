@@ -13,6 +13,18 @@ class TopicController{
         return res.status(200).json(results);
     }
 
+    async getByMonitor(req, res){
+        const monitorId = req.userId;
+
+        try {
+            const results  = await knex('topics').select().where({monitorId});
+
+            return res.status(200).json(results);
+        } catch (error) {
+            return res.status(404).json({message: error});
+        }
+    }
+
     async create(req, res){
         const {
             title,
