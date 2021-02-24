@@ -8,7 +8,7 @@ class TopicController{
             filterObj[prop] = req.query[prop];
         }
     
-        const results = await knex('topics').join('monitors', 'monitors.id', 'topics.monitorId').select('topics.id', 'topics.title', 'topics.subject', 'topics.course', 'monitors.name').where(filterObj);
+        const results = await knex('topics').select('id', 'title', 'subject', 'course').where(filterObj);
     
         return res.status(200).json(results);
     }

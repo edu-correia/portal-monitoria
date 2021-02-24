@@ -34,19 +34,23 @@ class MonitorController{
     async authenticate(req, res){
         const {email, password} = req.body;
 
-        const user = await knex('monitors').select('id', 'password').where({email});
+        try {
+            const user = await knex('monitors').select('id', 'password').where({email});
 
-        const userPassword = user[0].password;
-        const userId = user[0].id;
+            const userPassword = user[0].password;
+            const userId = user[0].id;
 
-        const decryptedPassword = cryptr.decrypt(userPassword);
-        
-        if(password !== decryptedPassword)
-            return res.status(400).send({error: 'Invalid password'});
+            const decryptedPassword = cryptr.decrypt(userPassword);
+            
+            if(password !== decryptedPassword)
+                return res.status(400).send({error: 'Invalid password'});
 
-        const token = generateToken(userId);
+            const token = generateToken(userId);
 
-        return res.status(200).send({token});
+            return res.status(200).send({token});
+        } catch (error) {
+            return res.status(404).json({message: error});
+        }
     }
 
     

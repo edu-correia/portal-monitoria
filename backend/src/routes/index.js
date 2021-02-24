@@ -19,7 +19,7 @@ router.post('/register', MonitorController.register);
 router.post('/authenticate', MonitorController.authenticate);
 
 // TopicController
-router.get('/topics', TopicController.getFiltered);
+router.get('/topics', authMiddleware, TopicController.getFiltered);
 router.post('/topics', validateDto(topicDto), authMiddleware, TopicController.create);
 router.put('/topics/:topicId', validateDto(topicDto), authMiddleware, TopicController.update);
 router.delete('/topics/:topicId', authMiddleware, TopicController.delete);
