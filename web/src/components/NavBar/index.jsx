@@ -3,11 +3,20 @@ import {useHistory} from 'react-router';
 import './styles.css';
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
 
-function NavBar(){
+function NavBar({link = null}){
     const history = useHistory();
+
+    function handleBack(){
+        if(link === null){
+            history.goBack();
+        }else{
+            history.push(link);
+        }
+    }
+
     return(
         <header className="hdr">
-            <button onClick={() => history.goBack()} className="return">
+            <button onClick={handleBack} className="return">
                 <img src={ArrowLeft} alt="Voltar"/>
                 <span>Voltar</span>
             </button>
