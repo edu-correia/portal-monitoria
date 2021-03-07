@@ -1,0 +1,68 @@
+.newtopic-div{
+    width: 80%;
+    height: max-content;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 20px 40px 20px 40px;
+    box-sizing: border-box;
+    border:1px solid #edd712;
+    border-radius: 8px;
+}
+
+.newtopic-div legend{
+    font-size: 24px;
+    color: #edd712;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.newtopic-input{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.newtopic-input label{
+    color: #bbb;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.newtopic-input input{
+    outline: none;
+    height: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ck-content{
+    background: #fff;
+    min-height: 300px;
+}
+
+.ck-content li{ margin-left: 15px;}
+
+.ck.ck-block-toolbar-button{
+    color: #e035cf;
+}
+
+.newtopic-div button{
+    float: right;
+    width: 100px;
+    height: 30px;
+    border: none;
+    background: #e035cf;
+    color: #202020;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 4px #950987;
+}
+
+.newtopic-div button:active{
+    box-shadow: 0 2px #950987;
+    transform: translateY(2px);
+}

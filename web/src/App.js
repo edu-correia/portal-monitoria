@@ -11,6 +11,7 @@ import ChatBot from './pages/ChatBot';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import NotFoundPage from './pages/NotFoundPage';
+import NewTopic from './pages/NewTopic';
 
 import history from './history';
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/chatbot" component={ChatBot} />
           <CustomRoute path="/login" component={Login} />
           <CustomRoute isPrivate path="/dashboard" component={Dashboard} />
+          <CustomRoute isPrivate path="/new-topic" component={NewTopic} />
           <Route path="*" component={NotFoundPage} />
         </Switch>
       </Router>
